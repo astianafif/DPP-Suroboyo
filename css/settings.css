@@ -1316,3 +1316,7 @@ https://una.im/CSSgram/
 .tp-kbimg-wrap:before,
 .tp-kbimg-wrap:after {height:500%;width:500%}
 
+.image600{
+	width:100%;
+    max-width:600px;
+}

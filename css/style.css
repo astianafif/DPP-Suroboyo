@@ -1,3 +1,9 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
 /* SAVING STATES, ETC */
 body .calendarSavingState,
 body #data-ajax-url { display:none; }
@@ -2370,3 +2376,10 @@ body.page-id-3090 .tour_recently_view
 }
 
 .wp-caption img {width: 100%;}
+
+.image600{
+	width:100%;
+     max-width:600px;
+}
+
+img.Image { max-width: 100%; display: block; }
