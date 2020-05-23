@@ -36,7 +36,8 @@
     <link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
 
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Work+Sans%3A700%2C700%2C700%2C700%2C700%2C100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900%7CPoppins%3A700%2C700%2C700%2C700%2C700%2C100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;subset' type='text/css' media='all' />
-
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex"></script>
 
 
 </head>
@@ -233,9 +234,11 @@
                                         <label for="url">Website</label>
                                         <input id="url" name="url" type="text" value="" size="30" maxlength="200" />
                                     </p>
-                                    <p class="form-submit">
-                                        <input name="submit" type="submit" id="submit" class="submit" value="Post Comment" />
-                                    </p>
+                                    <b-button variant="danger">
+                                        <p>
+                                            <input name="submit" type="submit" id="submit" value="Post Comment" />
+                                        </p>
+                                    </b-button>
                                 </form>
                             </div>
                             <!-- #respond -->
@@ -421,5 +424,26 @@
         };
         /* ]]> */
     </script>
+    <script>
+        Vue.component('ColoredBox', {
+          template: "<div class=\"box\"><button v-on:click=\"toggleMe()\">Toggle Now</button></div>",
+          methods: {
+            toggleMe() {
+              this.$root.toggleBox()
+            }
+          }
+        })
+        const vueApp = new Vue({
+          el: '#vapp',
+          data: { 
+           display: 'redbox' 
+          },
+          methods: {
+            toggleBox() {
+              this.display == 'redbox' ? this.display = 'greenbox' : this.display = 'redbox'
+            }
+          }
+        })
+        </script>
 </body>
 </html>
